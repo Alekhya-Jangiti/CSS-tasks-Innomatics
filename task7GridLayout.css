@@ -1,0 +1,323 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(
+        135deg,
+        rgb(82, 147, 244),
+        rgb(49, 76, 128)
+    );
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.dashboard{
+    width:100%;
+    height:100vh;
+    padding:20px;
+    display:grid;
+    grid-template-columns:260px 1fr 1fr 1fr 1fr;
+    grid-template-rows:80px 180px 180px 390px 180px 70px;
+    grid-template-areas:
+        "header header header header header"
+        "sidebar welcome welcome weather weather"
+        "sidebar welcome welcome progress progress"
+        "sidebar quote quote gallery gallery"
+        "sidebar music tasks profile empty"
+        "footer footer footer footer footer";
+
+    gap:20px;
+}
+
+.header,
+.sidebar,
+.weather-card,
+.progress-card,
+.quote-card,
+.gallery-card,
+.small-card,
+.footer{
+    background-color:rgb(15, 25, 43);
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+section,
+aside{
+    transform:scale(1.0);
+}
+
+section:hover,
+aside:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+.header{
+    grid-area:header;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    background-color:rgba(255, 255, 255, 0.08);
+}
+
+.logo{
+    width:250px;
+    font-size:28px;
+}
+
+.search-box{
+    width:40%;
+}
+
+.search-box input{
+    width:100%;
+    height:42px;
+    border:none;
+    padding:0 18px;
+    border-radius:25px;
+    background-color:rgb(27, 42, 65);
+    color:white;
+}
+
+.search-box input::placeholder{
+    color:rgb(160, 170, 185);
+}
+.header-profile{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+.notification{
+    font-size:20px;
+}
+.header-profile img{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background-size: contain;
+    border:3px solid rgba(255, 255, 255, 0.5);
+}
+
+.sidebar{
+    grid-area:sidebar;
+    padding:25px;
+}
+
+.sidebar h2{
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.sidebar nav a{
+    display:block;
+    padding:13px 12px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    background-color:rgb(31, 43, 61);
+    transform:translateY(7px);
+}
+
+.sidebar nav a:hover{
+    background-color:rgb(55, 90, 170);
+    transform:translateX(7px);
+}
+
+.welcome-card{
+    grid-area:welcome;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        rgb(38, 83, 219),
+        rgb(58, 51, 143)
+    );
+    display:flex;
+    align-items:center;
+    padding:20px;
+}
+
+.welcome-content{
+    width:100%;
+}
+.welcome-content h2{
+    font-size:35px;
+}
+.welcome-content p{
+    margin-top:3px;
+    font-size:16px;
+}
+
+.welcome-content button{
+    width:200px;
+    height:36px;
+    display:block;
+    margin-top:20px;
+    margin-left:auto;
+    border:none;
+    border-radius:12px;
+    background-color:rgb(13, 27, 67);
+    color:white;
+}
+
+.welcome-content button:hover{
+    background-color:rgb(7, 18, 48);
+    transform:scale(1.1);
+}
+
+.weather-card{
+    grid-area:weather;
+    padding:20px;
+}
+
+.weather-card h2{
+    font-size:20px;
+}
+
+.weather-card h3{
+    font-size:25px;
+}
+
+.weather-card p{
+    margin-top:2px;
+}
+
+.progress-card{
+    grid-area:progress;
+    padding:20px;
+}
+
+.progress-card h2{
+    font-size:20px;
+}
+
+.progress-card ul{
+    margin-top:5px;
+    margin-left:18px;
+    line-height:1.3;
+}
+
+.quote-card{
+    grid-area:quote;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.quote-card p{
+    font-size:16px;
+}
+
+.gallery-card{
+    grid-area:gallery;
+    padding:20px;
+    
+}
+
+.gallery{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    gap:12px;
+}
+
+.gallery img{
+    width:100%;
+    height:100%;
+    padding:5px;
+    background-size: contain;
+    border-radius:14px;
+    overflow: hidden;
+               
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+.small-card{
+    padding:20px;
+}
+
+.small-card h2{
+    font-size:19px;
+    margin-bottom:12px;
+}
+
+.music-card{
+    grid-area:music;
+}
+
+.music-card p{
+    margin-bottom:10px;
+}
+
+.music-controls{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.music-controls button{
+    border:none;
+    background-color:transparent;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.music-controls button:hover{
+    transform:scale(1.2);
+}
+
+.tasks-card{
+    grid-area:tasks;
+}
+
+.tasks-card ul{
+    margin-left:20px;
+    line-height:1.35;
+}
+
+.profile-card{
+    grid-area:profile;
+}
+
+.profile-card img{
+    width:55px;
+    height:55px;
+    background-size: contain;
+    border-radius:50%;
+    margin-bottom:8px;
+}
+
+.profile-card h2{
+    margin-bottom:0;
+}
+
+.profile-card p{
+    margin-top:2px;
+}
+
+.footer{
+    grid-area:footer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
